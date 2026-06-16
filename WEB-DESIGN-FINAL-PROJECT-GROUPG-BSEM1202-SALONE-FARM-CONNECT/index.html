@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salone Farm Connect</title>
+<link rel="stylesheet" href="style.CSS">
+</head>
+<body>
+
+<header id="mainHeader">
+  <a onclick="navigateTo('home-page')" class="logo" style="cursor: pointer;">
+  <span class="logo-icon">🌿</span>
+    Salone Farm Connect
+  </a>
+  <nav id="mainNav">
+    <a id="nav-home-page" onclick="navigateTo('home-page')">Home</a>
+    <a id="nav-about-page" onclick="navigateTo('about-page')">About</a>
+    <a id="nav-services-page" onclick="navigateTo('services-page')">Services</a>
+    <a id="nav-market-page" onclick="navigateTo('market-page')">Prices</a>
+    <a id="nav-contact-page" onclick="navigateTo('contact-page')">Contact</a>
+    <a id="nav-register-page" onclick="navigateTo('register-page')" class="nav-cta">Register</a>
+  </nav>
+  <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<div id="home-page" class="page-view">
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">Sierra Leone's Agricultural Platform</div>
+        <h2>Grow More.<br>Earn <span>Better</span>.<br>Connect Faster.</h2>
+        <p>Helping farmers across all 16 districts access real-time market prices, connect with verified buyers, and get modern farming guidance.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="navigateTo('register-page')">Join as a Farmer</button>
+          <button class="btn-outline" onclick="navigateTo('services-page')">Explore Services</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-grid">
+          <div class="hero-info-card"><div class="card-icon">👨‍🌾</div><h4>500+</h4><p>Registered Farmers</p>
+          </div>
+          <div class="hero-info-card"><div class="card-icon">🛒</div><h4>1,000+</h4><p>Active Buyers</p>
+          </div>
+          <div class="hero-info-card"><div class="card-icon">📍</div><h4>16</h4><p>Districts Covered</p>
+          </div>
+          <div class="hero-info-card"><div class="hero-info-card"><div class="card-icon">🌾</div><h4>50+</h4><p>Crops Listed</p>
+        </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat-item">
+      <h3 id="stat1">500+</h3>
+      <p>Farmers Connected</p>
+    </div>
+    <div class="stat-item">
+      <h3 id="stat2">16</h3>
+      <p>Districts Active</p>
+    </div>
+    <div class="stat-item">
+      <h3 id="stat3">1,000+</h3>
+      <p>Buyers Registered</p>
+    </div>
+    <div class="stat-item">
+      <h3 id="stat4">50+</h3>
+      <p>Crops Available</p>
+    </div>
+  </div>
+</div>
+
+<div id="about-page" class="page-view">
+  <section class="about">
+    <div class="about-inner">
+      <div class="about-image-wrap">
+        <img src="images/farmer.jpg" alt="Sierra Leone Farmer"
+          onerror="this.style.display='none'; this.parentElement.querySelector('.about-fallback').style.display='flex'">
+        <div class="about-fallback" style="display:none; height:460px; background:linear-gradient(135deg,#b7e4c7,#52b788); align-items:center; justify-content:center; font-size:100px;"></div>
+        <div class="about-tag">Est. 2024 · Freetown, SL</div>
+      </div>
+      <div class="about-text">
+        <span class="section-label">About Us</span>
+        <h2 class="section-title">Empowering Sierra Leone's Farming Communities</h2>
+        <p class="section-desc">Salone Farm Connect is a Digital Public Good bridging the gap between farmers and markets across Sierra Leone.</p>
+        <div class="about-feature">
+          <div class="about-feature-icon">📊</div>
+          <div>
+            <h4>Real-Time Market Data</h4>
+            <p>Daily updated crop prices from all major markets so you always sell at the right time.</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">🤝</div>
+          <div>
+            <h4>Verified Buyer Network</h4>
+            <p>Connect directly with trusted buyers — no middlemen, better prices for your harvest.</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">📱</div>
+          <div>
+            <h4>Works on All Devices</h4>
+            <p>Mobile-friendly platform accessible even on basic smartphones with low data usage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="services-page" class="page-view">
+  <section id="services">
+    <div class="services-inner">
+      <div style="text-align:center; max-width:580px; margin:0 auto 50px;">
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-title">Services Built for Farmers</h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/advice.jpg" alt="Farming Advice"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="card-img-placeholder p1">🌱</div>
+          </div>
+          <div class="card-body">
+            <h3>Farming Advice</h3>
+            <p>Modern techniques, seasonal guides, and expert tips tailored for Sierra Leone's climate and soil.</p>
+            <a onclick="showToast('Farming advice archives are being expanded!')" class="card-link">Learn more →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/market.jpg" alt="Market Prices"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="card-img-placeholder p2">💰</div>
+          </div>
+          <div class="card-body">
+            <h3>Market Prices</h3>
+            <p>Daily updated crop prices from Bo, Kenema, Makeni, and Freetown markets.</p>
+            <a onclick="navigateTo('market-page')" class="card-link">View prices →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/equipment.jpg" alt="Equipment Guide"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="card-img-placeholder p3">🚜</div>
+          </div>
+          <div class="card-body">
+            <h3>Equipment Guide</h3>
+            <p>Find affordable tools, compare options, and locate suppliers near your district.</p>
+            <a onclick="showToast('Equipment databases are updating...')" class="card-link">Browse tools →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/buyer.jpg" alt="Buyer Connection"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="card-img-placeholder p4">🛒</div>
+          </div>
+          <div class="card-body">
+            <h3>Buyer Connection</h3>
+            <p>Post your harvest and get contacted by verified buyers directly — no commission fees.</p>
+            <a onclick="navigateTo('register-page')" class="card-link">Get started →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="market-page" class="page-view">
+  <section id="market">
+    <div class="market-inner">
+      <span class="section-label">Live Prices</span>
+      <h2 class="section-title">Current Market Prices</h2>
+      <p class="section-desc">Prices updated daily from major markets across Sierra Leone. All prices in Leones (Le) per kg.</p>
+      <div class="market-grid">
+        <div class="price-card">
+          <div class="price-card-left">
+            <div class="price-card-emoji">🌾</div>
+            <div>
+              <div class="price-card-name">Rice</div>
+              <div class="price-card-sub">Oryza sativa</div>
+            </div>
+          </div>
+          <div>
+            <div class="price-card-amount">Le 900</div>
+            <div class="price-card-unit">per kg</div>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-card-left">
+            <div class="price-card-emoji">🥔</div>
+            <div>
+              <div class="price-card-name">Cassava</div>
+              <div class="price-card-sub">Manihot esculenta</div>
+            </div>
+          </div>
+          <div>
+            <div class="price-card-amount">Le 700</div>
+            <div class="price-card-unit">per kg</div>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-card-left">
+            <div class="price-card-emoji">🥜</div>
+            <div>
+              <div class="price-card-name">Groundnut</div>
+              <div class="price-card-sub">Arachis hypogaea</div>
+            </div>
+          </div>
+          <div>
+            <div class="price-card-amount">Le 1,200</div>
+            <div class="price-card-unit">per kg</div>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-card-left">
+            <div class="price-card-emoji">🌶️</div>
+            <div>
+              <div class="price-card-name">Pepper</div>
+              <div class="price-card-sub">Capsicum species</div>
+            </div>
+          </div>
+          <div>
+            <div class="price-card-amount">Le 1,500</div>
+            <div class="price-card-unit">per kg</div>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-card-left">
+            <div class="price-card-emoji">🌽</div>
+            <div>
+              <div class="price-card-name">Maize</div>
+              <div class="price-card-sub">Zea mays</div>
+            </div>
+          </div>
+          <div>
+            <div class="price-card-amount">Le 850</div>
+            <div class="price-card-unit">per kg</div>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-card-left">
+            <div class="price-card-emoji">🍠</div>
+            <div>
+              <div class="price-card-name">Sweet Potato</div>
+              <div class="price-card-sub">Ipomoea batatas</div>
+            </div>
+          </div>
+          <div>
+            <div class="price-card-amount">Le 600</div>
+            <div class="price-card-unit">per kg</div>
+          </div>
+        </div>
+      </div>
+      <p class="market-update">Last updated: <span id="updateTime">Loading...</span></p>
+    </div>
+  </section>
+  
+  <section class="testimonials">
+    <div class="testimonials-inner">
+      <div style="text-align:center; max-width:580px; margin:0 auto 50px;">
+        <span class="section-label">Success Stories</span>
+        <h2 class="section-title">What Our Farmers Say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars"></div>
+          <p>"Knowing the market price in Freetown before leaving my farm in Kenema saved me over Le 500,000 in transport!"</p>
+          <div class="testimonial-author">
+            <div class="avatar">MK</div>
+            <div>
+              <h4>Haja Rahatu Bassum</h4>
+              <span>Rice Farmer, Kenema</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars"></div>
+          <p>"I connected directly with an agribusiness buyer from Bo who bought my entire cassava yield. No middleman cheats."</p>
+          <div class="testimonial-author">
+            <div class="avatar">FB</div>
+            <div>
+              <h4>Francis Sillah</h4>
+              <span>Cassava Producer, Moyamba</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars"></div>
+          <p>"The advice on seasonal planting and compost application helped me double my pepper harvest this year."</p>
+          <div class="testimonial-author">
+            <div class="avatar">SK</div>
+            <div>
+              <h4>Adrian Amous Lavaly</h4>
+              <span>Vegetable Grower, Kono</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="contact-page" class="page-view">
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <span class="section-label">Get In Touch</span>
+        <h3>We're Here to Help</h3>
+        <p>Have questions about how to use the platform or need registration assistance? Contact our local team in Freetown.</p>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Phone Support</h4>
+            <p>+232 76 123456 / +232 33 654321</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h4>Email Address</h4>
+            <p>support@salonefarmconnect.sl</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Main Office</h4>
+            <p>Siaka Stevens Street, Freetown, Sierra Leone</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-map">
+        <img src="images/hero.jpg" alt="Hero" srcset="">
+        <span>🇸🇱</span>
+        Salone Farm Connect HQ
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="login-page" class="page-view">
+  <section id="login">
+    <div class="register-inner">
+      <span class="section-label">Welcome Back</span>
+      <h2 class="section-title">Login to Your Account</h2>
+      <p class="section-desc">Access your market connections, crop listings, and daily updates.</p>
+      <div class="register-form">
+        <form onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="lphone" placeholder="e.g. +232 76 000000" required>
+          </div>
+          <div class="form-group">
+            <label>Password / PIN</label>
+            <input type="password" id="lpassword" placeholder="Enter your secret PIN" required>
+          </div>
+          <button type="submit" class="form-submit-btn">Login</button>
+          <p class="form-toggle-text">
+            New to the network? <a onclick="navigateTo('register-page')">Register here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="register-page" class="page-view">
+  <section id="register">
+    <div class="register-inner">
+      <span class="section-label">Get Started Today</span>
+      <h2 class="section-title">Register as a Farmer</h2>
+      <p class="section-desc">Join hundreds of farmers across Sierra Leone and start selling smarter.</p>
+      <div class="register-form">
+        <form onsubmit="handleRegistration(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" id="fname" placeholder="e.g. Aminata Koroma" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" id="fphone" placeholder="e.g. +232 76 000000" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>District</label>
+              <select id="fdistrict" required>
+                <option value="" disabled selected>Select District</option>
+                <option>Bo</option>
+                <option>Bombali</option>
+                <option>Freetown</option>
+                <option>Kenema</option>
+                <option>Makeni</option>
+                <option>Kono</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Primary Crop</label>
+              <select id="fcrop" required>
+                <option value="" disabled selected>Select Crop</option>
+                <option>Rice</option>
+                <option>Cassava</option>
+                <option>Groundnut</option>
+                <option>Pepper</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="form-submit-btn">Complete Registration</button>
+          <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #fefcfc;">
+  Already have an account? 
+  <a onclick="navigateTo('login-page')" style="color: var(--green-light); cursor: pointer; font-weight: bold; text-decoration: underline; transition: color 0.2s ease;">
+    Login here
+  </a>
+</p>
+          <div id="successMsg" class="success-msg"> Success! Welcome to the network.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <a onclick="navigateTo('home-page')" class="logo">
+        <span class="logo-icon"></span>
+        Salone Farm Connect
+      </a>
+      <p>Building the foundation for sustainable farming and economic independence across all 16 districts of Sierra Leone.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Platform</h5>
+      <a onclick="navigateTo('home-page')">Home</a>
+      <a onclick="navigateTo('about-page')">About Us</a>
+      <a onclick="navigateTo('services-page')">Services</a>
+      <a onclick="navigateTo('market-page')">Live Prices</a>
+    </div>
+    <div class="footer-col">
+      <h5>Legal & Public</h5>
+      <a onclick="showToast('Privacy updates are live.')">Privacy Policy</a>
+      <a onclick="showToast('Standard terms apply.')">Terms of Service</a>
+      <a onclick="showToast('Certified DPG platform.')">Digital Public Good</a>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <a onclick="navigateTo('contact-page')">Help Center</a>
+      <a onclick="navigateTo('login-page')">Login</a>
+      <a onclick="navigateTo('register-page')">Register</a>
+      <a onclick="showToast('USSD Portal: Dial *432#')">USSD System</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Salone Farm Connect. All rights reserved.</p>
+    <div class="footer-socials">
+      <a onclick="showToast('Opening Facebook...')" class="social-btn" style="color:#fff;">f</a>
+      <a onclick="showToast('Opening X...')" class="social-btn" style="color:#fff;"></a>
+      <a onclick="showToast('Opening WhatsApp...')" class="social-btn" style="color:#fff;">w</a>
+    </div>
+  </div>
+</footer>
+
+<div id="toast">
+  <span id="toastText">Notification message here</span>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
